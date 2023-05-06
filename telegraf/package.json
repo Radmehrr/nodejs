@@ -1,0 +1,21 @@
+{
+  "name": "telegraf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "hears": "nodemon hears.js",
+    "event": "nodemon on-method.js",
+    "middleware": "nodemon middleware.js",
+    "print": "nodemon print-bot/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.6",
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.12.2"
+  }
+}

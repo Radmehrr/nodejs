@@ -1,0 +1,17 @@
+{
+  "name": "product",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon product.service.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/proto-loader": "^0.3.0",
+    "mongoose": "^7.1.0"
+  }
+}

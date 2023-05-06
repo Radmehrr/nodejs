@@ -1,0 +1,3 @@
+hellow radmehr
+dar terminal mitonim yechizi ro be yek file ezafe konim
+terminal stream to file 

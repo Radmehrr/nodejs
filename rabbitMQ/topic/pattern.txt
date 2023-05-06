@@ -1,0 +1,4 @@
+*.*.* => foo.bar.baz  , erfan.radmehr.kasra
+#.anything => anything.anything.anything , radmehr.co.nodejs.anything
+foo.bar.* => foo.bar.[radmehr,nodejs,rabbitmq]
+foo.bar.# => foo.bar.anything.anything.anything.anything.bar.baz.radmehr

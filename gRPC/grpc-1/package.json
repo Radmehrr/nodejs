@@ -1,0 +1,17 @@
+{
+  "name": "grpc",
+  "version": "1.0.0",
+  "main": "client.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/proto-loader": "^0.7.6"
+  },
+  "license": "ISC",
+  "description": ""
+}
