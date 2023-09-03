@@ -40,6 +40,9 @@ const ProductType = new GraphQLObjectType({
     feature: { type: FeaturesType },
     imagesURL: { type: new GraphQLList(GraphQLString) },
     comments: { type: new GraphQLList(CommentType) },
+    likes: { type: new GraphQLList(UserType) },
+    dislikes: { type: new GraphQLList(UserType) },
+    bookmarks: { type: new GraphQLList(UserType) },
   },
 });
 

@@ -30,5 +30,10 @@
       title
       _id
     }
+    dislikes {
+      _id
+      first_name
+      last_name
+    }
   }
 }

@@ -15,6 +15,9 @@ const CourseResolver = {
       { path: "category" },
       { path: "comments" },
       { path: "comments.answers.user" },
+      { path: "likes" },
+      { path: "dislikes" },
+      { path: "bookmarks" },
     ]);
   },
 };
