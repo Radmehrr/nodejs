@@ -1,0 +1,17 @@
+{
+  categories {
+    _id
+    title
+    children {
+      _id
+      title
+    }
+  }
+}
+
+{
+  childOfCategory(parent: "64e749cfe77d8e9543f031e3") {
+    _id
+    title
+  }
+}

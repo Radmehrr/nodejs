@@ -1,0 +1,33 @@
+{
+  products(category: "64e749cfe77d8e9543f031e3") {
+    _id
+    title
+    imagesURL
+    short_text
+    text
+    tags
+    supplier {
+      first_name
+      last_name
+    }
+    category {
+      title
+      _id
+    }
+    features {
+      height
+      width
+      weight
+      colors
+      length
+    }
+    comments {
+      _id
+      comment
+      user {
+        first_name
+        last_name
+      }
+    }
+  }
+}

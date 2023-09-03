@@ -1,0 +1,34 @@
+{
+  blogs(category: "64e749cfe77d8e9543f031e3") {
+    _id
+    title
+    imageURL
+    short_text
+    text
+    comments {
+      comment
+      openToComment
+      createdAt
+      user {
+        first_name
+        last_name
+      }
+      answers {
+        comment
+        user {
+          first_name
+          last_name
+        }
+        createdAt
+      }
+    }
+    author {
+      first_name
+      last_name
+    }
+    category {
+      title
+      _id
+    }
+  }
+}

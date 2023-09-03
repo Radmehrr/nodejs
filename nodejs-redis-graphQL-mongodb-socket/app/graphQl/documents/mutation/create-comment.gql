@@ -1,0 +1,30 @@
+mutation {
+  CreateCommentForBlog(
+    comment: "salam parent"
+    blogId: "64e9bc490f62be19ad36b12b"
+    parent: "64f4515496e060d3d5e471e2"
+  ) {
+    statusCode
+    data
+  }
+}
+
+mutation {
+  CreateCommentForCourse(
+    comment: "salam Course"
+    courseId: "64ec9b4cf1590e9f495de344"
+  ) {
+    statusCode
+    data
+  }
+}
+
+mutation {
+  CreateCommentForProduct(
+    comment: "salam Product"
+    productId: "64ea23877e5997c730dce4f7"
+  ) {
+    statusCode
+    data
+  }
+}
