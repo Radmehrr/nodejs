@@ -21,6 +21,11 @@ const {
   DisLikeBlog,
   DisLikeCourse,
 } = require("./mutations/dislike.resolver");
+const {
+  bookmarkProduct,
+  bookmarkBlog,
+  bookmarkCourse,
+} = require("./mutations/bookmark.resolver");
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQuery",
@@ -44,6 +49,9 @@ const RootMutation = new GraphQLObjectType({
     DisLikeProduct,
     DisLikeBlog,
     DisLikeCourse,
+    bookmarkProduct,
+    bookmarkBlog,
+    bookmarkCourse,
   },
 });
 

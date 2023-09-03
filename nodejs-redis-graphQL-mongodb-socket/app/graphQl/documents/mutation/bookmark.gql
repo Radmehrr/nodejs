@@ -1,0 +1,20 @@
+mutation {
+  bookmarkProduct(productId: "64ea23877e5997c730dce4f7") {
+    statusCode
+    data
+  }
+}
+
+mutation {
+  bookmarkCourse(courseId: "64ec9b4cf1590e9f495de344") {
+    statusCode
+    data
+  }
+}
+
+mutation {
+  bookmarkBlog(blogId: "64e9bc490f62be19ad36b12b") {
+    statusCode
+    data
+  }
+}

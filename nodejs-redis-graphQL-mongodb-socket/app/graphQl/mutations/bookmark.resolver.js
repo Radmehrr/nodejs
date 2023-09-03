@@ -12,7 +12,7 @@ const {
   checkExistProduct,
 } = require("../utils");
 
-const LikeProduct = {
+const bookmarkProduct = {
   type: ResponseType,
   args: {
     productId: { type: GraphQLString },
@@ -23,28 +23,19 @@ const LikeProduct = {
     const { productId } = args;
 
     await checkExistProduct(productId);
-    let likedProduct = await ProductModel.findOne({
+    let bookmarkedProduct = await ProductModel.findOne({
       _id: productId,
-      likes: user._id,
+      bookmarks: user._id,
     });
 
-    let dislikedProduct = await ProductModel.findOne({
-      _id: productId,
-      discountlikes: user._id,
-    });
-
-    const updateQuery = likedProduct
-      ? { $pull: { likes: user._id } }
-      : { $push: { likes: user._id } };
+    const updateQuery = bookmarkedProduct
+      ? { $pull: { bookmarks: user._id } }
+      : { $push: { bookmarks: user._id } };
     let message;
     await ProductModel.updateOne({ _id: productId }, updateQuery);
-    if (dislikedProduct && !likedProduct) {
-      await ProductModel.updateOne(
-        { _id: productId },
-        { $pull: { dislikes: user._id } }
-      );
-      message = "پسندیدن مقاله با موفقیت انجام شد";
-    } else message = "پسندیدن مقاله لفو شد";
+    if (!bookmarkedProduct) {
+      message = " محصول با موفقیت اضافه شد";
+    } else message = " محصول لفو شد";
 
     return {
       statusCode: 201,
@@ -55,7 +46,7 @@ const LikeProduct = {
   },
 };
 
-const LikeCourse = {
+const bookmarkCourse = {
   type: ResponseType,
   args: {
     courseId: { type: GraphQLString },
@@ -66,29 +57,20 @@ const LikeCourse = {
     const { courseId } = args;
 
     await checkExistCourse(courseId);
-    let likeCourse = await CourseModel.findOne({
+    let bookmarkedCourse = await CourseModel.findOne({
       _id: courseId,
-      likes: user._id,
+      bookmarks: user._id,
     });
 
-    let dislikeCourse = await CourseModel.findOne({
-      _id: courseId,
-      dislikes: user._id,
-    });
-
-    const updateQuery = likeCourse
-      ? { $pull: { likes: user._id } }
-      : { $push: { likes: user._id } };
+    const updateQuery = bookmarkedCourse
+      ? { $pull: { bookmarks: user._id } }
+      : { $push: { bookmarks: user._id } };
 
     let message;
     await CourseModel.updateOne({ _id: courseId }, updateQuery);
-    if (dislikeCourse && !likeCourse) {
-      await CourseModel.updateOne(
-        { _id: courseId },
-        { $pull: { dislikes: user._id } }
-      );
-      message = "پسندیدن مقاله با موفقیت انجام شد";
-    } else message = "پسندیدن مقاله لفو شد";
+    if (!bookmarkedCourse) {
+      message = " دوره با موفقیت اضافه شد";
+    } else message = "دوره لفو شد";
 
     return {
       statusCode: 201,
@@ -99,7 +81,7 @@ const LikeCourse = {
   },
 };
 
-const LikeBlog = {
+const bookmarkBlog = {
   type: ResponseType,
   args: {
     blogId: { type: GraphQLString },
@@ -110,30 +92,21 @@ const LikeBlog = {
     const { blogId } = args;
 
     await checkExistBlog(blogId);
-    let likedBlog = await BlogModel.findOne({
+    let bookmarkedBlog = await BlogModel.findOne({
       _id: blogId,
-      likes: user._id,
+      bookmarks: user._id,
     });
 
-    let dislikedBlog = await BlogModel.findOne({
-      _id: blogId,
-      dislikes: user._id,
-    });
-
-    const updateQuery = likedBlog
-      ? { $pull: { likes: user._id } }
-      : { $push: { likes: user._id } };
+    const updateQuery = bookmarkedBlog
+      ? { $pull: { bookmarks: user._id } }
+      : { $push: { bookmarks: user._id } };
 
     await BlogModel.updateOne({ _id: blogId }, updateQuery);
     let message;
-    if (dislikedBlog && !likedBlog) {
-      await BlogModel.updateOne(
-        { _id: blogId },
-        { $pull: { dislikes: user._id } }
-      );
 
-      message = "پسندیدن مقاله با موفقیت انجام شد";
-    } else message = "پسندیدن مقاله لفو شد";
+    if (!bookmarkedBlog) {
+      message = " مقاله با موفقیت دخیره شد";
+    } else message = "مقاله لفو شد";
 
     return {
       statusCode: 201,
@@ -145,7 +118,7 @@ const LikeBlog = {
 };
 
 module.exports = {
-  LikeProduct,
-  LikeBlog,
-  LikeCourse,
+  bookmarkProduct,
+  bookmarkBlog,
+  bookmarkCourse,
 };
